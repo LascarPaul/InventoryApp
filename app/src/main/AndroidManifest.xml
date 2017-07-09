@@ -16,6 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".EditorActivity"
+            android:label="Editor"
+            android:theme="@style/AppTheme">
+        </activity>
+        <provider
+            android:name=".data.ProdProvider"
+            android:authorities="com.example.joni.inventoryapp"/>
+        <activity
+            android:name=".CatalogActivity"
+            android:label="Catalog"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

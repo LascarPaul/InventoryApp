@@ -93,7 +93,7 @@ public class EditorActivity extends AppCompatActivity
 
         } else {
             setTitle(getString(R.string.edit_product));
-            getLoaderManager().initLoader(EXISTING_PRODUCT_LOADER, null, this);
+            getSupportLoaderManager().initLoader(EXISTING_PRODUCT_LOADER, null, this);
         }
     }
 
