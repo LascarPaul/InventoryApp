@@ -1,0 +1,52 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relative1"
+        >
+
+        <TextView
+            android:id="@+id/product_name_catalog"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Product" />
+
+        <TextView
+            android:id="@+id/product_name_catalog1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="9dp"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@id/product_name_catalog"
+            android:textSize="15sp" />
+
+
+
+        <TextView
+            android:id="@+id/product_price_catalog"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/product_name_catalog"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="4dp"
+            android:text="Price: " />
+
+        <TextView
+            android:id="@+id/product_price_catalog1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/product_name_catalog1"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@id/product_price_catalog"
+            android:textSize="15sp" />
+
+
+
+</RelativeLayout>
+
+</LinearLayout>

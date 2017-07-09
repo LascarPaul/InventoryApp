@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/saved_stock"
+        android:icon="@drawable/attachment"
+        android:title="@string/save"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/edit_product_atributes"
+        android:icon="@drawable/addfriend_btn"
+        android:title="@string/modify"
+        app:showAsAction="always" />
+
+</menu>

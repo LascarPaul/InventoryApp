@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">InventoryApp</string>
+    <string name="no_product">No Products in Stock.</string>
+    <string name="new_product">New Product</string>
+    <string name="edit_product">Edit Product</string>
+    <string name="delete_product">Delete Product</string>
+    <string name="discard">Discard</string>
+    <string name="deleted">Deleted</string>
+    <string name="error_deleting">Error Deleting Product</string>
+    <string name="continue_editing">Continue Editing</string>
+    <string name="permission">Permission needed for accessing photos.</string>
+    <string name="fill">Please fill all fields.</string>
+    <string name="failed">Failed to save changes.</string>
+    <string name="added">Product added.</string>
+    <string name="updated">Product updated.</string>
+    <string name="modify">Modify</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="dummyData">Insert Dummy Data</string>
+    <string name="deleteAll">Delete All</string>
+    <string name="settings">Settings</string>
+    <string name="ok">Ok</string>
+    <string name="deletedAll">All Data Deleted</string>
+    <string name="y">y</string>
+</resources>
