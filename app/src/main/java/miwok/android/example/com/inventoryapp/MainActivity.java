@@ -87,7 +87,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         values.put(ProdContract.ProductEntry.COLUMN_QUANTITY_PRODUCT, 10);
         values.put(ProdContract.ProductEntry.COLUMN_PRODUCT_SALES, 0.0);
 
-        Uri newUri = getContentResolver().insert(ProdContract.ProductEntry.CONTENT_URI, values);
 
         Toast.makeText(this, R.string.dummyData, Toast.LENGTH_SHORT).show();
     }
@@ -103,14 +102,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 Toast.makeText(MainActivity.this, R.string.deletedAll, Toast.LENGTH_SHORT).show();
             }
         });
-        builder.setNegativeButton(R.string.discard, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-
-                if (dialog != null) {
-                    dialog.dismiss();
-                }
-            }
-        });
+        builder.setNegativeButton(R.string.discard, null);
 
         AlertDialog alertDialog = builder.create();
         alertDialog.setTitle("DELETE COMPLETE LIST");

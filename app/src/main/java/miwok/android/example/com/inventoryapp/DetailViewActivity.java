@@ -45,8 +45,6 @@ public class DetailViewActivity extends AppCompatActivity implements LoaderManag
         setContentView(R.layout.activity_detail_view);
 
         stockRequest = (ImageView) findViewById(R.id.stock_request);
-        final Button decrementStockButton = (Button) findViewById(R.id.stock_decrement);
-        final Button incrementStockButton = (Button) findViewById(R.id.stock_increment);
         prodImage = (ImageView) findViewById(R.id.image_view_catalog);
         prodQuantity = (TextView) findViewById(R.id.product_quantity_catalog1);
         prodName = (TextView) findViewById(R.id.product_name_catalog1);
@@ -56,19 +54,6 @@ public class DetailViewActivity extends AppCompatActivity implements LoaderManag
         currentProductUri = intent.getData();
 
         getLoaderManager().initLoader(0, null, this);
-        decrementStockButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                incrementStock();
-            }
-        });
-
-        incrementStockButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                decrementStock();
-            }
-        });
 
         stockRequest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,24 +62,6 @@ public class DetailViewActivity extends AppCompatActivity implements LoaderManag
             }
         });
     }
-
-
-    private void incrementStock() {
-        int quantity = Integer.parseInt(prodQuantity.getText().toString());
-        if (quantity > 0) {
-            quantity--;
-            prodQuantity.setText(String.valueOf(quantity));
-        }
-    }
-
-    private void decrementStock() {
-        int quantity = Integer.parseInt(prodQuantity.getText().toString());
-        if (quantity >= 0) {
-            quantity++;
-            prodQuantity.setText(String.valueOf(quantity));
-        }
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

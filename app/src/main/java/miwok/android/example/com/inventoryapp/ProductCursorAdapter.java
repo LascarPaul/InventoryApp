@@ -75,7 +75,7 @@ public class ProductCursorAdapter extends CursorAdapter {
                 .into(productImageView);
 
         Picasso.with(context).load(productImage)
-                .placeholder(R.drawable.emoji)
+                .placeholder(R.drawable.shop)
                 .fit()
                 .into(productBuyImageVIew);
 

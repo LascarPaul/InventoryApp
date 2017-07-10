@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="generalMargin">2dp</dimen>
-    <dimen name="activityDetailMargin">4dp</dimen>
+    <dimen name="generalMargin">3dp</dimen>
+    <dimen name="generalDetailView">6dp</dimen>
+    <dimen name="activityDetailMargin">8dp</dimen>
     <dimen name="activityDetailMarginTop1">6dp</dimen>
     <dimen name="activityDetailMarginTop2">8dp</dimen>
     <dimen name="mail">50dp</dimen>
     <dimen name="textSize">15sp</dimen>
+    <dimen name="textSize1">20sp</dimen>
+    <dimen name="imageMargin">20dp</dimen>
+    <dimen name="productMarginLeft">17dp</dimen>
+    <dimen name="productMarginTop">65dp</dimen>
 </resources>

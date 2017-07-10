@@ -10,64 +10,73 @@
         android:layout_height="150dp">
 
         <ImageView
+            android:layout_marginRight="@dimen/imageMargin"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
             android:id="@+id/product_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="140dp"
+            android:layout_height="138dp" />
 
         <TextView
+            android:textSize="@dimen/textSize1"
             android:id="@+id/product_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_margin="@dimen/generalMargin" />
+            android:layout_margin="@dimen/activityDetailMargin" />
 
         <TextView
+            android:textSize="@dimen/textSize1"
             android:id="@+id/product_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/product_name"
-            android:layout_marginBottom="@dimen/generalMargin"
-            android:layout_marginLeft="@dimen/generalMargin"
-            android:layout_marginRight="@dimen/generalMargin" />
+            android:layout_marginBottom="@dimen/activityDetailMargin"
+            android:layout_marginLeft="@dimen/activityDetailMargin"
+            android:layout_marginRight="@dimen/activityDetailMargin" />
 
 
         <TextView
+            android:textSize="@dimen/textSize1"
             android:id="@+id/product_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/product_quantity"
-            android:layout_marginBottom="@dimen/generalMargin"
-            android:layout_marginLeft="@dimen/generalMargin"
-            android:layout_marginRight="@dimen/generalMargin" />
+            android:layout_marginBottom="@dimen/activityDetailMargin"
+            android:layout_marginLeft="@dimen/activityDetailMargin"
+            android:layout_marginRight="@dimen/activityDetailMargin" />
 
         <TextView
+            android:textSize="@dimen/textSize1"
             android:id="@+id/product_sales"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/product_price"
-            android:layout_marginBottom="@dimen/generalMargin"
-            android:layout_marginLeft="@dimen/generalMargin"
-            android:layout_marginRight="@dimen/generalMargin" />
+            android:layout_marginBottom="@dimen/activityDetailMargin"
+            android:layout_marginLeft="@dimen/activityDetailMargin"
+            android:layout_marginRight="@dimen/activityDetailMargin" />
 
-        <TextView
-            android:id="@+id/product_buy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/product_sales"
-            android:layout_marginBottom="@dimen/generalMargin"
-            android:layout_marginLeft="@dimen/generalMargin"
-            android:layout_marginRight="@dimen/generalMargin"
-            android:text="@string/Buy" />
-
-        <ImageView
-            android:id="@+id/product_buy_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/product_buy"
-            android:layout_marginBottom="@dimen/generalMargin"
-            android:layout_marginLeft="@dimen/generalMargin"
-            android:layout_marginRight="@dimen/generalMargin" />
     </RelativeLayout>
-
-
+    <RelativeLayout
+        android:layout_marginTop="@dimen/activityDetailMarginTop1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <View
+            android:background="#00897B"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+    <ImageView
+        android:layout_centerInParent="true"
+        android:id="@+id/product_buy_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activityDetailMargin"
+        android:layout_marginLeft="@dimen/activityDetailMargin"
+        android:layout_marginRight="@dimen/activityDetailMargin" />
+        <View
+            android:layout_alignParentBottom="true"
+            android:background="#00897B"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+    </RelativeLayout>
 </LinearLayout>

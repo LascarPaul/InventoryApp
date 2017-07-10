@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -339,21 +340,37 @@ public class EditorActivity extends AppCompatActivity
             int nameColumnIndex = cursor.getColumnIndex(ProdContract.ProductEntry.COLUMN_NAME_PRODUCT);
             int priceColumnIndex = cursor.getColumnIndex(ProdContract.ProductEntry.COLUMN_PRICE_PRODUCT);
             int quantityColumnIndex = cursor.getColumnIndex(ProdContract.ProductEntry.COLUMN_QUANTITY_PRODUCT);
+            final Button decrementStockButton = (Button) findViewById(R.id.stock_decrement);
+            final Button incrementStockButton = (Button) findViewById(R.id.stock_increment);
 
             String name = cursor.getString(nameColumnIndex);
             float price = cursor.getFloat(priceColumnIndex);
-            int quantity = cursor.getInt(quantityColumnIndex);
+            int qnt = cursor.getInt(quantityColumnIndex);
             currentPhotoUri = cursor.getString(imageColumnIndex);
 
             editTextName.setText(name);
             editTextPrice.setText(String.valueOf(price));
-            editTextQuantity.setText(String.valueOf(quantity));
+            editTextQuantity.setText(String.valueOf(qnt));
 
+            decrementStockButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    incrementStock();
+                }
+            });
+
+            incrementStockButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    decrementStock();
+                }
+            });
             Picasso.with(this).load(currentPhotoUri)
                     .placeholder(R.drawable.add_image)
                     .fit()
                     .into(imageView);
         }
+
     }
 
     @Override
@@ -362,4 +379,20 @@ public class EditorActivity extends AppCompatActivity
         editTextQuantity.setText("");
         editTextPrice.setText("");
     }
+    private void incrementStock() {
+        int quantity = Integer.parseInt(editTextQuantity.getText().toString());
+        if (quantity > 0) {
+            quantity--;
+            editTextQuantity.setText(String.valueOf(quantity));
+        }
+    }
+
+    private void decrementStock() {
+        int quantity = Integer.parseInt(editTextQuantity.getText().toString());
+        if (quantity >= 0) {
+            quantity++;
+            editTextQuantity.setText(String.valueOf(quantity));
+        }
+    }
+
 }

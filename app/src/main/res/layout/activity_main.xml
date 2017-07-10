@@ -37,6 +37,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        app:fabSize="normal" />
+        android:layout_marginBottom="@dimen/activityDetailMarginTop1"
+        android:layout_marginRight="@dimen/activityDetailMarginTop1"
+        app:backgroundTint="@android:color/holo_green_dark"
+        app:elevation="10dp"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/addfriend_btn" />
 
 </RelativeLayout>

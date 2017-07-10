@@ -1,106 +1,95 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout android:id="@+id/relative1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <RelativeLayout
-        android:id="@+id/relative1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
 
         <ImageView
+            android:layout_marginRight="@dimen/mail"
+            android:layout_marginLeft="@dimen/imageMargin"
+            android:layout_marginBottom="@dimen/mail"
+            android:layout_marginTop="@dimen/mail"
+            android:layout_alignParentLeft="true"
             android:id="@+id/image_view_catalog"
-            android:layout_width="60dp"
-            android:layout_height="40dp" />
+            android:layout_width="120dp"
+            android:layout_height="100dp" />
 
         <TextView
+            android:layout_marginLeft="@dimen/generalMargin"
             android:id="@+id/product_name_catalog"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/image_view_catalog"
-            android:layout_marginBottom="@dimen/activityDetailMargin"
-            android:layout_marginLeft="@dimen/activityDetailMargin"
-            android:layout_marginRight="@dimen/activityDetailMargin"
-            android:layout_marginTop="@dimen/activityDetailMarginTop2"
-            android:text="@string/Product" />
+            android:layout_marginBottom="@dimen/generalMargin"
+            android:layout_marginRight="@dimen/generalMargin"
+            android:layout_marginTop="@dimen/productMarginTop"
+            android:layout_toRightOf="@id/image_view_catalog"
+            android:gravity="start"
+            android:text="@string/Product"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/textSize" />
 
         <TextView
             android:id="@+id/product_name_catalog1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/image_view_catalog"
-            android:layout_marginBottom="@dimen/activityDetailMargin"
-            android:layout_marginTop="@dimen/activityDetailMarginTop1"
+            android:layout_marginTop="@dimen/productMarginTop"
             android:layout_toRightOf="@id/product_name_catalog"
             android:textSize="@dimen/textSize" />
 
 
         <TextView
             android:id="@+id/product_price_catalog"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/product_name_catalog"
-            android:layout_margin="@dimen/activityDetailMargin"
-            android:text="@string/Price" />
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/generalMargin"
+            android:layout_toRightOf="@id/image_view_catalog"
+            android:gravity="start"
+            android:text="@string/Price"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/textSize" />
 
         <TextView
+            android:layout_marginTop="@dimen/generalMargin"
             android:id="@+id/product_price_catalog1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/product_name_catalog1"
-            android:layout_marginBottom="@dimen/activityDetailMargin"
-            android:layout_marginTop="@dimen/activityDetailMargin"
+            android:layout_below="@id/product_name_catalog"
             android:layout_toRightOf="@id/product_price_catalog"
             android:textSize="@dimen/textSize" />
 
-
-        <Button
-            android:id="@+id/stock_decrement"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/product_price_catalog"
-            android:layout_marginLeft="@dimen/activityDetailMargin"
-            android:layout_marginRight="@dimen/activityDetailMargin"
-            android:text="@string/decrement" />
-
         <TextView
             android:id="@+id/product_quantity_catalog"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/stock_decrement"
-            android:layout_margin="@dimen/activityDetailMargin"
-            android:text="@string/Stock" />
+            android:layout_below="@id/product_price_catalog"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/generalMargin"
+            android:layout_marginLeft="@dimen/productMarginLeft"
+            android:layout_toRightOf="@id/image_view_catalog"
+            android:gravity="start"
+            android:text="@string/Stock"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/textSize" />
 
         <TextView
+            android:layout_marginTop="@dimen/generalMargin"
             android:id="@+id/product_quantity_catalog1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/stock_decrement"
-            android:layout_marginBottom="@dimen/activityDetailMargin"
-            android:layout_marginTop="@dimen/activityDetailMargin"
+            android:layout_below="@id/product_price_catalog"
             android:layout_toRightOf="@id/product_quantity_catalog"
             android:textSize="@dimen/textSize" />
 
-        <Button
-            android:id="@+id/stock_increment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/product_quantity_catalog"
-            android:layout_marginLeft="@dimen/activityDetailMargin"
-            android:layout_marginRight="@dimen/activityDetailMargin"
-            android:text="@string/increment" />
-
         <ImageView
+            android:layout_centerHorizontal="true"
             android:id="@+id/stock_request"
-            android:layout_width="30dp"
-            android:layout_height="10dp"
-            android:layout_above="@id/stock_increment"
-            android:layout_below="@id/stock_decrement"
-            android:layout_marginLeft="@dimen/mail"
-            android:layout_toRightOf="@id/product_quantity_catalog1"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
             android:background="@drawable/letter" />
 
     </RelativeLayout>
 
-</LinearLayout>
+
