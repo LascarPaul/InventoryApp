@@ -9,7 +9,7 @@
         app:showAsAction="always" />
     <item
         android:id="@+id/edit_product_atributes"
-        android:icon="@drawable/addfriend_btn"
+        android:icon="@drawable/edit"
         android:title="@string/modify"
         app:showAsAction="always" />
 

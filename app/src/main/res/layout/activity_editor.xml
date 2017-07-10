@@ -10,6 +10,7 @@
 
 
         <ImageView
+            android:layout_marginTop="@dimen/activityDetailMarginTop2"
             android:layout_centerHorizontal="true"
             android:id="@+id/product_image_editor"
             android:layout_width="120dp"
