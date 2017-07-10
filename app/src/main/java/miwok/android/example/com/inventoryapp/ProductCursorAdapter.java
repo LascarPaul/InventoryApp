@@ -42,7 +42,7 @@ public class ProductCursorAdapter extends CursorAdapter {
         TextView productPriceTextVIew = (TextView) view.findViewById(R.id.product_price);
         TextView productQuantityTextView = (TextView) view.findViewById(R.id.product_quantity);
         TextView productSalesTextView = (TextView) view.findViewById(R.id.product_sales);
-        ImageView productBuyImageVIew = (ImageView) view.findViewById(R.id.product_buy);
+        ImageView productBuyImageVIew = (ImageView) view.findViewById(R.id.product_buy_image);
 
         int imageColumnIndex = cursor.getColumnIndex(ProdContract.ProductEntry.COLUMN_IMAGE_PRODUCT);
         int nameColumnIndex = cursor.getColumnIndex(ProdContract.ProductEntry.COLUMN_NAME_PRODUCT);
@@ -57,7 +57,7 @@ public class ProductCursorAdapter extends CursorAdapter {
         final double price = cursor.getDouble(priceColumnIndex);
         String productsPrice = "Price: " + cursor.getString(priceColumnIndex) + " $";
         final int quantity = cursor.getInt(quantityColumnIndex);
-        String productQuantity = "Stock\n" + cursor.getString(quantityColumnIndex);
+        String productQuantity = "Stock: " + cursor.getString(quantityColumnIndex);
         final double productSales = cursor.getDouble(salesColumnIndex);
         String productTotalSales = "Sales: " + cursor.getString(salesColumnIndex) +
                 " $";
@@ -73,6 +73,12 @@ public class ProductCursorAdapter extends CursorAdapter {
                 .placeholder(R.drawable.add_image)
                 .fit()
                 .into(productImageView);
+
+        Picasso.with(context).load(productImage)
+                .placeholder(R.drawable.emoji)
+                .fit()
+                .into(productBuyImageVIew);
+
 
         productBuyImageVIew.setOnClickListener(new View.OnClickListener() {
             @Override

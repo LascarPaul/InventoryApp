@@ -23,9 +23,9 @@
         </activity>
         <provider
             android:name=".data.ProdProvider"
-            android:authorities="com.example.joni.inventoryapp"/>
+            android:authorities="miwok.android.example.com.inventoryapp"/>
         <activity
-            android:name=".CatalogActivity"
+            android:name=".DetailViewActivity"
             android:label="Catalog"
             android:parentActivityName=".MainActivity"/>
     </application>

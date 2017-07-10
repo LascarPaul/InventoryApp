@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="generalMargin">2dp</dimen>
+    <dimen name="activityDetailMargin">4dp</dimen>
+    <dimen name="activityDetailMarginTop1">6dp</dimen>
+    <dimen name="activityDetailMarginTop2">8dp</dimen>
+    <dimen name="mail">50dp</dimen>
+    <dimen name="textSize">15sp</dimen>
+</resources>

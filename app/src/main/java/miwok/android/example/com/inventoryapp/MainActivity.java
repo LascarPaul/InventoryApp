@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         productListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Intent intent = new Intent(MainActivity.this, CatalogActivity.class);
+                Intent intent = new Intent(MainActivity.this, DetailViewActivity.class);
 
                 Uri currentPetUri = ContentUris.withAppendedId(ProdContract.ProductEntry.CONTENT_URI, id);
 
@@ -125,14 +125,14 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     private void deleteAllProducts() {
         int rowsDeleted = getContentResolver().delete(ProdContract.ProductEntry.CONTENT_URI, null, null);
-        Log.v("CatalogActivity", rowsDeleted + " rows deleted from pet database");
+        Log.v("DetailViewActivity", rowsDeleted + " rows deleted from pet database");
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.settings:
-                Toast.makeText(this, R.string.y, Toast.LENGTH_SHORT)
+                Toast.makeText(this, R.string.settingsButton, Toast.LENGTH_SHORT)
                         .show();
                 return true;
             case R.id.dummy_data:

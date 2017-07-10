@@ -21,5 +21,15 @@
     <string name="settings">Settings</string>
     <string name="ok">Ok</string>
     <string name="deletedAll">All Data Deleted</string>
-    <string name="y">y</string>
+    <string name="settingsButton">Settings button pressed.</string>
+    <string name="request">How much to request?</string>
+    <string name="requestProd">Request products from supplier.</string>
+    <string name="requesty">Request</string>
+    <string name="requestd">Don\'t Request</string>
+    <string name="Buy">Buy</string>
+    <string name="Product">Product: </string>
+    <string name="Price">Price: </string>
+    <string name="Stock">Stock: </string>
+    <string name="increment"> + </string>
+    <string name="decrement"> - </string>
 </resources>

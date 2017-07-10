@@ -63,6 +63,7 @@ public class EditorActivity extends AppCompatActivity
             return false;
         }
     };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -236,7 +237,7 @@ public class EditorActivity extends AppCompatActivity
         String price = editTextPrice.getText().toString();
         String quantity = editTextQuantity.getText().toString();
 
-        if (name.isEmpty() || price.isEmpty()  || quantity.isEmpty()) {
+        if (name.isEmpty() || price.isEmpty() || quantity.isEmpty()) {
             Toast.makeText(this, R.string.fill, Toast.LENGTH_SHORT).show();
             return;
         }

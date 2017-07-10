@@ -1,58 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp">
+        android:layout_height="150dp">
+
         <ImageView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
             android:id="@+id/product_image"
-            />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/product_name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content" />
+            android:layout_alignParentTop="true"
+            android:layout_margin="@dimen/generalMargin" />
 
         <TextView
             android:id="@+id/product_quantity"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-             />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_name"
+            android:layout_marginBottom="@dimen/generalMargin"
+            android:layout_marginLeft="@dimen/generalMargin"
+            android:layout_marginRight="@dimen/generalMargin" />
 
-        <View
-            android:id="@+id/view1"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            />
-
-        <View
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:id="@+id/view2"
-            android:layout_below="@id/view1" />
 
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
             android:id="@+id/product_price"
-             />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_quantity"
+            android:layout_marginBottom="@dimen/generalMargin"
+            android:layout_marginLeft="@dimen/generalMargin"
+            android:layout_marginRight="@dimen/generalMargin" />
 
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
             android:id="@+id/product_sales"
-             />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_price"
+            android:layout_marginBottom="@dimen/generalMargin"
+            android:layout_marginLeft="@dimen/generalMargin"
+            android:layout_marginRight="@dimen/generalMargin" />
+
+        <TextView
+            android:id="@+id/product_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_sales"
+            android:layout_marginBottom="@dimen/generalMargin"
+            android:layout_marginLeft="@dimen/generalMargin"
+            android:layout_marginRight="@dimen/generalMargin"
+            android:text="@string/Buy" />
 
         <ImageView
-            android:layout_height="wrap_content"
+            android:id="@+id/product_buy_image"
             android:layout_width="wrap_content"
-            android:id="@+id/product_buy"
-             />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_buy"
+            android:layout_marginBottom="@dimen/generalMargin"
+            android:layout_marginLeft="@dimen/generalMargin"
+            android:layout_marginRight="@dimen/generalMargin" />
     </RelativeLayout>
 
 

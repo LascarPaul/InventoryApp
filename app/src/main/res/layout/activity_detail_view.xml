@@ -1,0 +1,106 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/image_view_catalog"
+            android:layout_width="60dp"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:id="@+id/product_name_catalog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_view_catalog"
+            android:layout_marginBottom="@dimen/activityDetailMargin"
+            android:layout_marginLeft="@dimen/activityDetailMargin"
+            android:layout_marginRight="@dimen/activityDetailMargin"
+            android:layout_marginTop="@dimen/activityDetailMarginTop2"
+            android:text="@string/Product" />
+
+        <TextView
+            android:id="@+id/product_name_catalog1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_view_catalog"
+            android:layout_marginBottom="@dimen/activityDetailMargin"
+            android:layout_marginTop="@dimen/activityDetailMarginTop1"
+            android:layout_toRightOf="@id/product_name_catalog"
+            android:textSize="@dimen/textSize" />
+
+
+        <TextView
+            android:id="@+id/product_price_catalog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_name_catalog"
+            android:layout_margin="@dimen/activityDetailMargin"
+            android:text="@string/Price" />
+
+        <TextView
+            android:id="@+id/product_price_catalog1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_name_catalog1"
+            android:layout_marginBottom="@dimen/activityDetailMargin"
+            android:layout_marginTop="@dimen/activityDetailMargin"
+            android:layout_toRightOf="@id/product_price_catalog"
+            android:textSize="@dimen/textSize" />
+
+
+        <Button
+            android:id="@+id/stock_decrement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_price_catalog"
+            android:layout_marginLeft="@dimen/activityDetailMargin"
+            android:layout_marginRight="@dimen/activityDetailMargin"
+            android:text="@string/decrement" />
+
+        <TextView
+            android:id="@+id/product_quantity_catalog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/stock_decrement"
+            android:layout_margin="@dimen/activityDetailMargin"
+            android:text="@string/Stock" />
+
+        <TextView
+            android:id="@+id/product_quantity_catalog1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/stock_decrement"
+            android:layout_marginBottom="@dimen/activityDetailMargin"
+            android:layout_marginTop="@dimen/activityDetailMargin"
+            android:layout_toRightOf="@id/product_quantity_catalog"
+            android:textSize="@dimen/textSize" />
+
+        <Button
+            android:id="@+id/stock_increment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_quantity_catalog"
+            android:layout_marginLeft="@dimen/activityDetailMargin"
+            android:layout_marginRight="@dimen/activityDetailMargin"
+            android:text="@string/increment" />
+
+        <ImageView
+            android:id="@+id/stock_request"
+            android:layout_width="30dp"
+            android:layout_height="10dp"
+            android:layout_above="@id/stock_increment"
+            android:layout_below="@id/stock_decrement"
+            android:layout_marginLeft="@dimen/mail"
+            android:layout_toRightOf="@id/product_quantity_catalog1"
+            android:background="@drawable/letter" />
+
+    </RelativeLayout>
+
+</LinearLayout>
