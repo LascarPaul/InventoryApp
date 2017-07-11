@@ -99,6 +99,11 @@ public class EditorActivity extends AppCompatActivity
             getSupportLoaderManager().initLoader(EXISTING_PRODUCT_LOADER, null, this);
         }
 
+        Picasso.with(this).load(photoUri)
+                .placeholder(R.drawable.add_image)
+                .fit()
+                .into(imageView);
+
         final Button decrementStockButton = (Button) findViewById(R.id.stock_decrement);
         final Button incrementStockButton = (Button) findViewById(R.id.stock_increment);
         decrementStockButton.setOnClickListener(new View.OnClickListener() {
@@ -260,6 +265,7 @@ public class EditorActivity extends AppCompatActivity
             Toast.makeText(this, R.string.fill, Toast.LENGTH_SHORT).show();
             return;
         }
+
 
         ContentValues values = new ContentValues();
         values.put(ProdContract.ProductEntry.COLUMN_IMAGE_PRODUCT, photoUri);
