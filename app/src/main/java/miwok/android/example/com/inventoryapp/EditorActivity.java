@@ -206,9 +206,9 @@ public class EditorActivity extends AppCompatActivity
     private void selectPhoto() {
         Intent photoSelector = new Intent(Intent.ACTION_PICK);
 
-        File directorioFoto = Environment.getExternalStoragePublicDirectory
+        File photoDirectory = Environment.getExternalStoragePublicDirectory
                 (Environment.DIRECTORY_PICTURES);
-        String pictureDirectoryPath = directorioFoto.getPath();
+        String pictureDirectoryPath = photoDirectory.getPath();
 
         Uri data = Uri.parse(pictureDirectoryPath);
 
@@ -233,12 +233,13 @@ public class EditorActivity extends AppCompatActivity
         }
     }
 
-    private void AddNewProduct() {
+    private void addNewProduct() {
         String name = editTextName.getText().toString();
         String price = editTextPrice.getText().toString();
         String quantity = editTextQuantity.getText().toString();
+        String image = imageView.toString();
 
-        if (name.isEmpty() || price.isEmpty() || quantity.isEmpty()) {
+        if (name.isEmpty() || price.isEmpty() || image.isEmpty() || quantity.isEmpty()) {
             Toast.makeText(this, R.string.fill, Toast.LENGTH_SHORT).show();
             return;
         }
@@ -299,7 +300,7 @@ public class EditorActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.saved_product:
-                AddNewProduct();
+                addNewProduct();
                 finish();
                 return true;
             case R.id.delete_product:
@@ -371,7 +372,9 @@ public class EditorActivity extends AppCompatActivity
                     .into(imageView);
         }
 
+
     }
+
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
