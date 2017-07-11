@@ -37,6 +37,8 @@ import miwok.android.example.com.inventoryapp.data.ProdContract;
 public class EditorActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<Cursor> {
 
+    private Uri mProductPhotoUri;
+
     private int quantity = 0;
 
     private static final int EXISTING_PRODUCT_LOADER = 0;
@@ -245,7 +247,7 @@ public class EditorActivity extends AppCompatActivity
             if (data != null) {
             }
 
-            Uri mProductPhotoUri = data.getData();
+            mProductPhotoUri = data.getData();
             photoUri = mProductPhotoUri.toString();
 
             Picasso.with(this).load(photoUri)
@@ -259,9 +261,8 @@ public class EditorActivity extends AppCompatActivity
         String name = editTextName.getText().toString();
         String price = editTextPrice.getText().toString();
         String quantity = editTextQuantity.getText().toString();
-        String image = imageView.toString();
 
-        if (name.isEmpty() || price.isEmpty() || image.isEmpty() || quantity.isEmpty()) {
+        if (name.isEmpty() || price.isEmpty() || mProductPhotoUri==null ||  quantity.isEmpty()) {
             Toast.makeText(this, R.string.fill, Toast.LENGTH_SHORT).show();
             return;
         }
