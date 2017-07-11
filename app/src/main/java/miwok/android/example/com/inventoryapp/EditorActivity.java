@@ -55,7 +55,7 @@ public class EditorActivity extends AppCompatActivity
 
     public static final int EXTERNAL_STORAGE_REQUEST_PERMISSION_CODE = 21;
 
-    private String currentPhotoUri = "N/A";
+    private String photoUri = "N/A";
 
     private boolean isProductEdited = false;
 
@@ -241,9 +241,9 @@ public class EditorActivity extends AppCompatActivity
             }
 
             Uri mProductPhotoUri = data.getData();
-            currentPhotoUri = mProductPhotoUri.toString();
+            photoUri = mProductPhotoUri.toString();
 
-            Picasso.with(this).load(mProductPhotoUri)
+            Picasso.with(this).load(photoUri)
                     .placeholder(R.drawable.add_image)
                     .fit()
                     .into(imageView);
@@ -262,7 +262,7 @@ public class EditorActivity extends AppCompatActivity
         }
 
         ContentValues values = new ContentValues();
-        values.put(ProdContract.ProductEntry.COLUMN_IMAGE_PRODUCT, currentPhotoUri);
+        values.put(ProdContract.ProductEntry.COLUMN_IMAGE_PRODUCT, photoUri);
         values.put(ProdContract.ProductEntry.COLUMN_NAME_PRODUCT, name);
         values.put(ProdContract.ProductEntry.COLUMN_PRICE_PRODUCT, price);
         values.put(ProdContract.ProductEntry.COLUMN_QUANTITY_PRODUCT, quantity);
@@ -308,7 +308,7 @@ public class EditorActivity extends AppCompatActivity
 
         if (currentProductUri != null) {
             MenuItem menuItem = menu.findItem(R.id.saved_product);
-            menuItem.setIcon(R.drawable.attachment);
+            menuItem.setIcon(R.drawable.ic_check_white_24dp);
         }
         return true;
     }
@@ -363,14 +363,14 @@ public class EditorActivity extends AppCompatActivity
             String name = cursor.getString(nameColumnIndex);
             float price = cursor.getFloat(priceColumnIndex);
             int qnt = cursor.getInt(quantityColumnIndex);
-            currentPhotoUri = cursor.getString(imageColumnIndex);
+            photoUri = cursor.getString(imageColumnIndex);
 
             editTextName.setText(name);
             editTextPrice.setText(String.valueOf(price));
             editTextQuantity.setText(String.valueOf(qnt));
 
 
-            Picasso.with(this).load(currentPhotoUri)
+            Picasso.with(this).load(photoUri)
                     .placeholder(R.drawable.add_image)
                     .fit()
                     .into(imageView);

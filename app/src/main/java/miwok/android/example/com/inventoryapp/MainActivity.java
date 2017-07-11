@@ -79,14 +79,14 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         getLoaderManager().initLoader(0, null, this);
     }
 
-    private void addDummy() {
+    private void addDummyData() {
 
         ContentValues values = new ContentValues();
         values.put(ProdContract.ProductEntry.COLUMN_NAME_PRODUCT, "New Product");
         values.put(ProdContract.ProductEntry.COLUMN_PRICE_PRODUCT, "1.5");
-        values.put(ProdContract.ProductEntry.COLUMN_QUANTITY_PRODUCT, 10);
+        values.put(ProdContract.ProductEntry.COLUMN_QUANTITY_PRODUCT, 5);
         values.put(ProdContract.ProductEntry.COLUMN_PRODUCT_SALES, 0.0);
-
+        getContentResolver().insert(ProdContract.ProductEntry.CONTENT_URI, values);
 
         Toast.makeText(this, R.string.dummyData, Toast.LENGTH_SHORT).show();
     }
@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private void showDeleteConfirmationDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(R.string.deleteAll);
         builder.setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
 
@@ -105,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         builder.setNegativeButton(R.string.discard, null);
 
         AlertDialog alertDialog = builder.create();
-        alertDialog.setTitle("DELETE COMPLETE LIST");
+        alertDialog.setTitle(R.string.deleteList);
         alertDialog.show();
     }
 
@@ -128,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                         .show();
                 return true;
             case R.id.dummy_data:
-                addDummy();
+                addDummyData();
                 return true;
             case R.id.delete_all:
                 showDeleteConfirmationDialog();

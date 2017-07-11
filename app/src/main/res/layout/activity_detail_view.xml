@@ -1,7 +1,8 @@
 <RelativeLayout android:id="@+id/relative1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/gradient">
 
 
         <ImageView
@@ -83,12 +84,12 @@
             android:textSize="@dimen/textSize" />
 
         <ImageView
-            android:layout_centerHorizontal="true"
             android:id="@+id/stock_request"
-            android:layout_width="50dp"
-            android:layout_height="30dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/letter" />
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/truck1" />
 
     </RelativeLayout>
 

@@ -39,9 +39,9 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/activityDetailMarginTop1"
         android:layout_marginRight="@dimen/activityDetailMarginTop1"
-        app:backgroundTint="@android:color/holo_green_dark"
+        app:backgroundTint="@android:color/holo_red_light"
         app:elevation="10dp"
         app:fabSize="normal"
-        app:srcCompat="@drawable/addfriend_btn" />
+        app:srcCompat="@drawable/ic_add_circle_outline_black_24dp" />
 
 </RelativeLayout>

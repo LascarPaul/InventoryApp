@@ -11,4 +11,5 @@
     <dimen name="imageMargin">20dp</dimen>
     <dimen name="productMarginLeft">17dp</dimen>
     <dimen name="productMarginTop">65dp</dimen>
+    <dimen name="cardViewMargin">10dp</dimen>
 </resources>

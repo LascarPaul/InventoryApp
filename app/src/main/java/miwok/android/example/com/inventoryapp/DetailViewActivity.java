@@ -15,7 +15,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,7 +36,6 @@ public class DetailViewActivity extends AppCompatActivity implements LoaderManag
     private ImageView stockRequest;
     private TextView prodQuantity;
     private ImageView prodImage;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +92,6 @@ public class DetailViewActivity extends AppCompatActivity implements LoaderManag
         startActivity(intent);
         finish();
     }
-
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
@@ -154,7 +151,6 @@ public class DetailViewActivity extends AppCompatActivity implements LoaderManag
     private void showDialogRequestMerchandise() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(R.string.requestProd);
         builder.setPositiveButton(R.string.requesty, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
 
@@ -171,7 +167,7 @@ public class DetailViewActivity extends AppCompatActivity implements LoaderManag
         });
 
         AlertDialog alertDialog = builder.create();
-        alertDialog.setTitle("Request Products");
+        alertDialog.setTitle(R.string.requestProd);
         alertDialog.show();
     }
 

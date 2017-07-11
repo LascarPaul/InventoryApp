@@ -23,7 +23,7 @@
     <string name="deletedAll">All Data Deleted</string>
     <string name="settingsButton">Settings button pressed.</string>
     <string name="request">How much to request?</string>
-    <string name="requestProd">Request products from supplier.</string>
+    <string name="requestProd">Request products from supplier?</string>
     <string name="requesty">Request</string>
     <string name="requestd">Don\'t Request</string>
     <string name="Buy">Buy</string>
@@ -33,4 +33,5 @@
     <string name="increment"> + </string>
     <string name="decrement"> - </string>
     <string name="inputNumberFirst">Please input a number!</string>
+    <string name="deleteList">Delete entire list of products?</string>
 </resources>

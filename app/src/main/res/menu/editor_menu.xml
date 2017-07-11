@@ -2,13 +2,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/saved_product"
-        android:icon="@drawable/attachment"
+        android:icon="@drawable/ic_check_white_24dp"
         android:title="@string/save"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/delete_product"
-        android:icon="@drawable/clear_btn"
+        android:icon="@drawable/ic_delete_white_24dp"
         android:title="@string/delete"
         app:showAsAction="always" />
 </menu>
