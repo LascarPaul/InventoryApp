@@ -32,7 +32,9 @@ public class ProductCursorAdapter extends CursorAdapter {
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
 
         return LayoutInflater.from(context).inflate(R.layout.product_list, parent, false);
+
     }
+
 
     @Override
     public void bindView(View view, final Context context, final Cursor cursor) {
@@ -106,4 +108,5 @@ public class ProductCursorAdapter extends CursorAdapter {
             }
         });
     }
+
 }

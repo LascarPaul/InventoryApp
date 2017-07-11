@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
         ListView productListView = (ListView) findViewById(R.id.product_list);
+        productListView.setEmptyView(findViewById(R.id.empty_view));
 
         productListView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override

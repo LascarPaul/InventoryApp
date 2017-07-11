@@ -34,4 +34,5 @@
     <string name="decrement"> - </string>
     <string name="inputNumberFirst">Please input a number!</string>
     <string name="deleteList">Delete entire list of products?</string>
+    <string name="emptyView">Please press the red button in order to add new products.</string>
 </resources>
