@@ -37,6 +37,7 @@ import miwok.android.example.com.inventoryapp.data.ProdContract;
 public class EditorActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<Cursor> {
 
+    private int quantity = 0;
 
     private static final int EXISTING_PRODUCT_LOADER = 0;
 
@@ -97,6 +98,22 @@ public class EditorActivity extends AppCompatActivity
             setTitle(getString(R.string.edit_product));
             getSupportLoaderManager().initLoader(EXISTING_PRODUCT_LOADER, null, this);
         }
+
+        final Button decrementStockButton = (Button) findViewById(R.id.stock_decrement);
+        final Button incrementStockButton = (Button) findViewById(R.id.stock_increment);
+        decrementStockButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                decrementStock();
+            }
+        });
+
+        incrementStockButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                incrementStock();
+            }
+        });
     }
 
     private void showDeleteConfirmationDialog() {
@@ -341,8 +358,7 @@ public class EditorActivity extends AppCompatActivity
             int nameColumnIndex = cursor.getColumnIndex(ProdContract.ProductEntry.COLUMN_NAME_PRODUCT);
             int priceColumnIndex = cursor.getColumnIndex(ProdContract.ProductEntry.COLUMN_PRICE_PRODUCT);
             int quantityColumnIndex = cursor.getColumnIndex(ProdContract.ProductEntry.COLUMN_QUANTITY_PRODUCT);
-            final Button decrementStockButton = (Button) findViewById(R.id.stock_decrement);
-            final Button incrementStockButton = (Button) findViewById(R.id.stock_increment);
+
 
             String name = cursor.getString(nameColumnIndex);
             float price = cursor.getFloat(priceColumnIndex);
@@ -353,19 +369,7 @@ public class EditorActivity extends AppCompatActivity
             editTextPrice.setText(String.valueOf(price));
             editTextQuantity.setText(String.valueOf(qnt));
 
-            decrementStockButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    incrementStock();
-                }
-            });
 
-            incrementStockButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    decrementStock();
-                }
-            });
             Picasso.with(this).load(currentPhotoUri)
                     .placeholder(R.drawable.add_image)
                     .fit()
@@ -376,26 +380,35 @@ public class EditorActivity extends AppCompatActivity
     }
 
 
+
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         editTextName.setText("");
         editTextQuantity.setText("");
         editTextPrice.setText("");
     }
-    private void incrementStock() {
-        int quantity = Integer.parseInt(editTextQuantity.getText().toString());
-        if (quantity > 0) {
-            quantity--;
-            editTextQuantity.setText(String.valueOf(quantity));
-        }
-    }
-
     private void decrementStock() {
-        int quantity = Integer.parseInt(editTextQuantity.getText().toString());
-        if (quantity >= 0) {
-            quantity++;
-            editTextQuantity.setText(String.valueOf(quantity));
+        try {
+            quantity = Integer.parseInt(editTextQuantity.getText().toString());
+            if (quantity > 0) {
+                quantity--;
+                editTextQuantity.setText(String.valueOf(quantity));
+            }
+
+        } catch (NumberFormatException ex) {
+            Toast.makeText(this, R.string.inputNumberFirst, Toast.LENGTH_SHORT).show();
         }
     }
 
+    private void incrementStock() {
+        try {
+            quantity = Integer.parseInt(editTextQuantity.getText().toString());
+            if (quantity >= 0) {
+                quantity++;
+                editTextQuantity.setText(String.valueOf(quantity));
+            }
+        } catch (NumberFormatException ex) {
+            Toast.makeText(this, R.string.inputNumberFirst, Toast.LENGTH_SHORT).show();
+        }
+    }
 }
